@@ -1,0 +1,26 @@
+<div id="cookies-manage" class="{{ cookiesSettingsGet('cookies_manage_css_class') }}">
+
+    <div class="panel-heading">
+
+        {% if cookiesSettingsGet('cookies_manage_title', null) %}
+
+            <h1 class="display-1 fw-bolder mb-4"><strong>{{ cookiesSettingsGet('cookies_manage_title') }}</strong></h1>
+
+        {% endif %}
+
+    </div>
+
+    <div>
+
+        {% if cookiesSettingsGet('cookies_manage_content', null) %}
+
+            <div class="content">{{ cookiesSettingsGet('cookies_manage_content')|raw }}</div>
+
+        {% endif %}
+
+        {% partial '@list-cookies'
+            disablePageReload = cookiesSettingsGet('cookies_manage_disable_page_reload', 0) %}
+
+    </div>
+
+</div>

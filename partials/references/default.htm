@@ -1,0 +1,29 @@
+{% set posts = __SELF__.posts %}
+
+<div class="row row-cols-1 g-5 row-cols-sm-2 g-sm-4 row-cols-md-3 row-cols-xl-4">
+    {% for post in posts %}
+        <div class="col d-flex flex-column">
+            {% if post.featured_images.count %}
+                <p>
+                    <img src="{{ post.featured_images.first.path|resize(400, 300, {"mode": "crop"}) }}" alt="{{ post.title }}" class="img-fluid">
+                </p>
+            {% endif %}
+
+            <h3 class="h4 mb-3">
+                {{ post.title }}
+            </h3>
+
+            <p>
+                {{ post.excerpt }}
+            </p>
+
+            <p class="mb-0 mt-auto">
+                {% for category in post.categories %}
+                    <span class="badge bg-primary">
+                        {{ category.name }}
+                    </span>
+                {% endfor %}
+            </p>
+        </div>
+    {% endfor %}
+</div>

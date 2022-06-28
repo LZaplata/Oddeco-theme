@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700;800&display=swap')
+
+/***** override bootstrap variables *****/
+
+$font-family-base:                  "Lexend", sans-serif
+
+$font-size-base:                    1.0625rem
+$font-size-15:                      0.9375rem
+
+$font-weight-base:                  400
+$font-weight-semi-bold:             600
+$font-weight-bold:                  700
+$font-weight-bolder:                800
+
+$display-font-sizes:                (1: 2.8125rem, 2: 1.3125rem)
+$display-font-weight:               $font-weight-semi-bold
+
+$primary:                           #00adef
+$secondary:                         #cceffc
+$gray:                              #d3d2d2
+$black:                             #000000
+$white:                             #ffffff
+
+$link-color:                        $primary
+$link-hover-color:                  $black
+
+$headings-color:                    $primary
+
+$nav-link-font-size:                1rem
+$nav-link-font-weight:              $font-weight-semi-bold
+$nav-link-color:                    $white
+$nav-link-hover-color:              $black
+$nav-link-padding-x:                0
+
+$offcanvas-bg-color:                $primary
+$offcanvas-color:                   $white
+
+$btn-font-weight:                   $font-weight-bold
+$btn-font-size:                     1.3125
+$btn-border-radius:                 3rem
+$btn-border-width:                  3px
+$btn-padding-y:                     .5rem
+$btn-padding-x:                     2rem
+$btn-focus-width:                   0
+$btn-border-radius-lg:              4rem
+$btn-close-focus-shadow:            none
+
+$card-border-radius:                1.5rem
+$card-bg:                           $secondary
+$card-border-width:                 0
+$card-color:                        $white
+$card-spacer-x:                     2rem
+$card-spacer-y:                     1.5rem
+
+$input-font-size:                   $font-size-15
+$input-font-weight:                 $font-weight-base
+$input-border-color:                $white
+$input-border-radius:               2rem
+$input-padding-x:                   1.3rem
+$input-padding-y:                   .6rem
+$input-focus-border-color:          $white
+$input-focus-box-shadow:            none
+$input-group-addon-bg:              $white
+$input-group-addon-color:           $primary
+$input-placeholder-color:           $secondary
+$form-check-input-focus-box-shadow: none
+
+@import "bootstrap/scss/functions"
+@import "bootstrap/scss/variables"
+
+/***** add new theme color *****/
+
+$custom-colors:                     ("primary": $primary, "secondary": $secondary, "black": $black, "white": $white)
+$theme-colors:                      map-merge($theme-colors, $custom-colors)
+$theme-colors-rgb:                  map-loop($theme-colors, to-rgb, "$value")
+$utilities-colors:                  map-merge($utilities-colors, $custom-colors)
+$utilities-text-colors:             map-loop($utilities-colors, rgba-css-var, "$key", "text")
+$utilities-bg-colors:               map-loop($utilities-colors, rgba-css-var, "$key", "bg")
+
+@import "bootstrap/scss/bootstrap"

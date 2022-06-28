@@ -1,0 +1,8 @@
+{
+    "name": "lzaplata/oddeco-theme",
+    "type": "october-theme",
+    "description": "Theme for company from Hradec Kr\u00e1lov\u00e9.",
+    "require": {
+        "composer/installers": "~1.0"
+    }
+}

@@ -1,0 +1,31 @@
+<footer class="container-fluid bg-primary py-4 text-white">
+    <div class="container-lg">
+        <div class="row row-cols-1 row-cols-sm-3 g-0">
+            <div class="col d-sm-flex align-items-sm-end">
+                <ul class="nav nav-pills flex-column w-100">
+                    <li class="nav-item">
+                        <a href="{{ 'gdpr'|page }}" class="nav-link fs-15 link-white hover-primary fw-normal p-0 text-center text-sm-start d-sm-inline-flex">
+                            GDPR
+                        </a>
+                    </li>
+
+                    <li class="nav-item mt-2">
+                        <a href="{{ 'cookies'|page }}" class="nav-link fs-15 link-white hover-primary fw-normal p-0 text-center text-sm-start d-sm-inline-flex">
+                            Nastavení cookies
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-8 mt-4 d-flex align-items-center col-sm justify-content-sm-center align-items-sm-end">
+                &copy; {{ "now"|date("Y") }} FERBET s.r.o.
+            </div>
+
+            <div class="col-4 mt-4 d-flex justify-content-end col-sm align-items-sm-end">
+                <a href="https://www.hucr.cz" target="_blank" class="signature">
+                    <span class="bg-white"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>

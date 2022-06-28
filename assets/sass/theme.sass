@@ -1,0 +1,139 @@
+@import "variables"
+
+/***** toggle main menu dropdown on hover *****/
+
+//header
+    #menu
+        .dropdown
+            .dropdown-menu
+                display: none
+
+                &.show
+                    margin-top: -2px !important
+
+            &:hover, &:focus, &:active
+                .dropdown-menu
+                    display: block
+
+/***** end toggle main menu dropdown on hover *****/
+
+html
+    scroll-behavior: smooth
+
+.display1
+    font-weight: $font-weight-bolder
+
+.btn-outline-secondary
+    &:hover, &:focus, &:active
+        color: $white
+
+.fs-15
+    font-size: $font-size-15
+
+@each $name, $value in $theme-colors
+    .hover-#{$name}
+        transition: $transition-base
+
+        &:hover, &:focus, &:active
+            color: $value !important
+
+header
+    background: $primary
+
+    #logo
+        img
+            @include media-breakpoint-only(xs)
+                max-height: 20px
+
+    .nav
+        li
+            a
+                margin-left: 50px
+
+#kontakt
+    #scf-contactform
+        form
+            &.was-validated
+                .form-group
+                    &:before
+                        top: 14px
+
+            .form-group
+                position: relative
+
+                &.has-error
+                    display: flex
+                    flex-direction: column
+
+                    input
+                        order: 0
+
+                    small
+                        order: 10
+                        display: block
+                        font-size: $font-size-15
+
+                input, textarea
+                    padding-left: $input-padding-x * 2.2
+
+                &:before
+                    font-family: bootstrap-icons
+                    position: absolute
+                    font-size: $font-size-15
+                    top: 15px
+                    left: $input-padding-x + ($grid-gutter-width / 2)
+                    line-height: 1
+                    color: $input-color
+
+                &.name
+                    &:before
+                        content: "\F4E1"
+
+                &.email
+                    &:before
+                        content: "\F32F"
+
+                &.phone
+                    &:before
+                        content: "\F5C1"
+
+                &.text
+                    &:before
+                        content: "\F4CB"
+
+            button
+                &:after
+                    animation: none
+                    border: none
+                    opacity: 1
+                    height: auto
+
+
+footer
+    .signature
+        span
+            mask: url("../images/signature.svg")
+            -webkit-mask: url("../images/signature.svg")
+            width: 85px
+            height: 25px
+            mask-size: cover
+            display: block
+            transition: $transition-base
+
+            &:hover, &:focus, &:active
+                background-color: $primary !important
+
+#offcanvas
+    .offcanvas-body
+        .nav
+            li
+                a
+                    text-align: center
+                    font-size: $h3-font-size
+
+#cookies-bar
+    background-color: $white !important
+
+    @include media-breakpoint-down(md)
+        max-width: none
+        left: 20px

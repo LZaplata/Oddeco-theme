@@ -1,0 +1,13 @@
+name: Oddeco
+description: 'Theme for company from Hradec Králové.'
+author: 'Lukáš Záplata'
+homepage: ''
+authorCode: LZaplata
+code: oddeco
+parent: ''
+database: '0'
+require:
+    - rainlab.blog
+    - lzaplata.extensions
+    - janvince.smallcontactform
+    - janvince.smallgdpr
