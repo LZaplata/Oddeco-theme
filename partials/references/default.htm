@@ -1,8 +1,8 @@
 {% set posts = __SELF__.posts %}
 
-<div class="row row-cols-1 g-5 row-cols-sm-2 g-sm-4 row-cols-md-3 row-cols-xl-4">
+<div class="references row row-cols-1 g-5 row-cols-sm-2 g-sm-4 row-cols-md-3 row-cols-xl-4">
     {% for post in posts %}
-        <div class="col d-flex flex-column">
+        <div class="reference col d-flex flex-column">
             {% if post.featured_images.count %}
                 <p>
                     <img src="{{ post.featured_images.first.path|resize(400, 300, {"mode": "crop"}) }}" alt="{{ post.title }}" class="img-fluid">
@@ -13,9 +13,9 @@
                 {{ post.title }}
             </h3>
 
-            <p>
+            <div class="content">
                 {{ post.content|raw }}
-            </p>
+            </div>
 
             <p class="mb-0 mt-auto">
                 {% for category in post.categories %}
